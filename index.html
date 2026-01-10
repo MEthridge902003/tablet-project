@@ -34,10 +34,10 @@
             <span class="label">Tic Tac Toe</span>
         </button>
 
-        <a href="https://www.youtubekids.com" target="_blank" class="app-card yt-btn">
-            <span class="icon">📺</span>
-            <span class="label">Videos</span>
-        </a>
+        <a href="vnd.youtube.kids://" class="app-card yt-btn">
+    <span class="icon">📺</span>
+    <span class="label">Open YT Kids App</span>
+</a>
     </main>
 
     <div id="mirror-modal" class="modal">
@@ -70,7 +70,7 @@
     <div class="modal-content game-box">
         <button class="close-btn" onclick="closeGame('TTT-modal')">Back to Menu</button>
          <h1>Tic Tac Toe</h1>
-       
+       <div id="game-board-wrapper">  
     <div id="game-board" style="display: grid; grid-template-columns: repeat(3, 100px); gap: 5px;">
     <div class="cell" data-index="0" style="width: 100px; height: 100px; border: 1px solid black; display: flex; align-items: center; justify-content: center; font-size: 2rem;"></div>
     <div class="cell" data-index="1" style="width: 100px; height: 100px; border: 1px solid black; display: flex; align-items: center; justify-content: center; font-size: 2rem;"></div>

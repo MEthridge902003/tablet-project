@@ -140,3 +140,37 @@ body {
 #rps-modal, #TTT-modal, #mirror-modal {
     display: none;
 }
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+}
+
+.video-link {
+    background: #fff4ff;
+    border: 4px solid #ce93d8;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.video-link:active {
+    transform: scale(0.95);
+}
+
+.video-link .icon {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.video-link .label {
+    color: #4a148c;
+    font-weight: bold;
+    font-size: 1.1rem;
+}

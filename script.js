@@ -51,3 +51,19 @@ function closeGame(gameId) {
     }
     // ... keep your mirror logic below ...
 }
+
+// Card video
+function playVideo(videoId) {
+    const container = document.getElementById('video-player-container');
+    container.innerHTML = `
+        <iframe width="100%" height="315" 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        <button class="close-btn" onclick="stopVideo()">Stop Video</button>
+    `;
+}
+
+function stopVideo() {
+    document.getElementById('video-player-container').innerHTML = '';
+}

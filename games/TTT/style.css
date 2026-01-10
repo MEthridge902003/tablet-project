@@ -1,0 +1,74 @@
+/* 1. THE LAYOUT: Centering the game on your screen */
+#rps-modal {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 2. THE GRID: Creating the 3x3 square */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px; /* Space between squares */
+    background-color: #333; /* This creates the "lines" between squares */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 3. THE CELLS: Styling the squares */
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem; /* Makes the X and O nice and big */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #e0f7fa; /* Light blue hint on hover */
+}
+
+/* 4. THE PIECES: Different colors for X and O */
+/* (We can't target "X" directly in CSS easily, but we can style the text) */
+.cell:nth-child(odd) { color: #2c3e50; } /* Subtle dark blue */
+.cell:nth-child(even) { color: #e74c3c; } /* Subtle red */
+
+/* 5. THE BUTTON: Making the reset look professional */
+#reset-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+#reset-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Slightly grows when you hover */
+}
+
+#reset-btn:active {
+    transform: scale(0.95); /* Shrinks when you click it */
+}

@@ -1,0 +1,48 @@
+#rps-modal .game-box{
+    background-color: #c5c2c2; /* Dark mode base */
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+    border: 1px solid #444;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background: #333;
+    color: white;
+}
+.controller {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.choice-btn {
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.1s; /* Makes it "pop" when clicked */
+}
+
+.choice-btn:hover {
+    background-color: #444;
+}
+
+.choice-btn:active {
+    transform: scale(0.9); /* Squeezes the button when you press it */
+}

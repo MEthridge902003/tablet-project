@@ -172,30 +172,15 @@ if (gardenArea) {
     });
 }
 
-// Add this to your initialization code
-document.getElementById('garden-area').addEventListener('click', function(e) {
-    const garden = document.getElementById('garden-area');
-    const rect = garden.getBoundingClientRect();
-    
-    // Calculate position relative to the garden div
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
 
-    const newSticker = document.createElement('div');
-    newSticker.classList.add('placed-sticker');
-    newSticker.innerHTML = activeSticker;
-    newSticker.style.left = x + 'px';
-    newSticker.style.top = y + 'px';
-
-    garden.appendChild(newSticker);
-    
-    // Play a "tap" sound if you have one!
-    if (typeof playSound === "function") playSound('pop');
-});
 function clearGarden() {
     const garden = document.getElementById('garden-area');
     if (garden) {
         garden.innerHTML = ''; // This deletes everything inside the garden
         if (typeof playSound === "function") playSound('magic'); // Optional "poof" sound
     }
+}
+
+function launchGame(url) {
+    window.open(url, '_blank');
 }

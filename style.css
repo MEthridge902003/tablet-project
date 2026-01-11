@@ -174,3 +174,34 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
 }
+#sketch-container {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border: 5px solid #ffde59;
+    display: grid; /* You'll use JS to create the grid inside here */
+    margin: 0 auto;
+}
+.sound-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px;
+    padding: 10px;
+}
+
+.sound-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #4cc9f0;
+    border-radius: 15px;
+    padding: 15px 5px;
+    font-size: 2rem; /* Big emojis */
+}
+
+.sound-btn span {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: #333;
+}

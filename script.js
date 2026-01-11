@@ -67,3 +67,17 @@ function playVideo(videoId) {
 function stopVideo() {
     document.getElementById('video-player-container').innerHTML = '';
 }
+// Sound Board
+function playSound(name) {
+    const sound = document.getElementById('sfx-' + name);
+    
+    // Check if the sound element exists AND has a valid source
+    if (sound && sound.readyState >= 2) { 
+        sound.currentTime = 0;
+        sound.play();
+    } else {
+        console.warn(`Sound "sfx-${name}" is not ready or file is missing.`);
+        // Optional: Alert yourself so you know which one is broken
+        // alert("Check file: " + name); 
+    }
+}

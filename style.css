@@ -211,10 +211,15 @@ body {
 #bubble-area {
     position: relative;
     width: 100%;
-    height: 80vh; /* Takes up most of the modal */
+    /* Use 'min-height' to force it to take up space on mobile */
+    min-height: 400px; 
+    height: 70vh; 
     overflow: hidden;
     background: linear-gradient(to top, #89f7fe 0%, #66a6ff 100%);
     border-radius: 20px;
+    /* Ensure it's 'under' the close button but visible */
+    margin-top: 10px;
+    touch-action: none; /* Prevents the phone from trying to 'scroll' the bubbles */
 }
 
 /* The actual bubble */

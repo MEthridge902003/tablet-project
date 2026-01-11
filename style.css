@@ -182,13 +182,15 @@ body {
     display: grid; /* You'll use JS to create the grid inside here */
     margin: 0 auto;
 }
+
 .sound-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    /* This tells the phone: "Fit as many 100px columns as you can, then fill the rest" */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
-    padding: 10px;
+    width: 100%; /* Ensure it doesn't try to be wider than the phone */
+    box-sizing: border-box;
 }
-
 .sound-btn {
     display: flex;
     flex-direction: column;

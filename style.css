@@ -242,3 +242,83 @@ body {
         transform: translateY(-120vh); /* Move it off the top of the screen */
     }
 }
+
+.garden-wrapper {
+    background: #9de2ff; /* Sky color */
+    position: relative;
+    overflow: hidden;
+}
+
+#garden-area {
+    flex-grow: 1;
+    width: 100%;
+    background: linear-gradient(to bottom, #9de2ff 0%, #9de2ff 60%, #7cfc00 60%, #228b22 100%);
+    position: relative;
+    cursor: crosshair;
+}
+
+.sticker-tray {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: 10px;
+    border-top: 3px solid #4cc9f0;
+}
+
+.sticker-tray button {
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.placed-sticker {
+    position: absolute;
+    font-size: 3rem;
+    transform: translate(-50%, -50%); /* Centers the emoji on the touch point */
+    user-select: none;
+    pointer-events: none; /* Allows you to stack stickers without clicking the old ones */
+}
+.garden-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.clear-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tray-item {
+    transition: transform 0.2s;
+    /* This makes the stickers easier to tap on mobile */
+    padding: 10px; 
+}
+/* Make the buttons in the tray visible and touch-friendly */
+.tray-item {
+    background: #f0f0f0 !important; /* Light grey so white emojis show up */
+    border: 2px solid #4cc9f0 !important;
+    border-radius: 10px;
+    margin: 2px;
+    box-shadow: 2px 2px 0px #4cc9f0;
+}
+
+/* Add a drop shadow to the emojis in the garden so they look like stickers */
+.placed-sticker {
+    position: absolute;
+    font-size: 3rem;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    pointer-events: none;
+    /* Subtle shadow makes them look like they are sitting on the grass */
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3)); 
+}

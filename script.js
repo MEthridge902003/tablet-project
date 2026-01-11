@@ -121,3 +121,81 @@ function stopBubbles() {
     const area = document.getElementById('bubble-area');
     if (area) area.innerHTML = ''; // This clears the old bubbles
 }
+// Sticker Garden
+let activeSticker = '🌸'; // Default sticker
+
+function selectSticker(emoji, btnElement) {
+    activeSticker = emoji;
+    
+    // Reset all tray items
+    document.querySelectorAll('.tray-item').forEach(btn => {
+        btn.style.backgroundColor = '#f0f0f0';
+        btn.style.transform = "scale(1)";
+    });
+
+    // Highlight the selected one
+    if (btnElement) {
+        btnElement.style.backgroundColor = '#fff';
+        btnElement.style.transform = "scale(1.1)";
+    }
+}
+
+// Update the garden listener to be more robust
+const gardenArea = document.getElementById('garden-area');
+if (gardenArea) {
+    gardenArea.addEventListener('click', function(e) {
+        const rect = gardenArea.getBoundingClientRect();
+        
+        // Use pageX/Y or clientX/Y depending on scroll
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const newSticker = document.createElement('div');
+        newSticker.classList.add('placed-sticker');
+        
+        // Random slight rotation so they don't look too "perfect"
+        const rotation = Math.floor(Math.random() * 40) - 20; // -20 to 20 degrees
+        
+        newSticker.innerHTML = activeSticker;
+        newSticker.style.left = x + 'px';
+        newSticker.style.top = y + 'px';
+        newSticker.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+
+        gardenArea.appendChild(newSticker);
+        
+        // Play sound (safe check)
+        const popSound = document.getElementById('sfx-pop');
+        if (popSound) {
+            popSound.currentTime = 0;
+            popSound.play().catch(() => {}); // Catch prevents console errors if sound isn't ready
+        }
+    });
+}
+
+// Add this to your initialization code
+document.getElementById('garden-area').addEventListener('click', function(e) {
+    const garden = document.getElementById('garden-area');
+    const rect = garden.getBoundingClientRect();
+    
+    // Calculate position relative to the garden div
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const newSticker = document.createElement('div');
+    newSticker.classList.add('placed-sticker');
+    newSticker.innerHTML = activeSticker;
+    newSticker.style.left = x + 'px';
+    newSticker.style.top = y + 'px';
+
+    garden.appendChild(newSticker);
+    
+    // Play a "tap" sound if you have one!
+    if (typeof playSound === "function") playSound('pop');
+});
+function clearGarden() {
+    const garden = document.getElementById('garden-area');
+    if (garden) {
+        garden.innerHTML = ''; // This deletes everything inside the garden
+        if (typeof playSound === "function") playSound('magic'); // Optional "poof" sound
+    }
+}

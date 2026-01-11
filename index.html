@@ -49,6 +49,11 @@
     <span class="label">Pop Pop!</span>
 </button>
 
+    <button class="app-card garden-btn" onclick="openGame('garden-modal')">
+    <span class="icon">🌻</span>
+    <span class="label">Sticker Garden</span>
+</button>
+
 </main>
 
 
@@ -119,5 +124,31 @@
 </div>
 
 <audio id="sfx-pop" src="assets/bubble-pop.mp3"></audio>
+
+<div id="garden-modal" class="modal">
+    <div class="modal-content garden-wrapper">
+        <div class="garden-header">
+            <button class="close-btn" onclick="closeGame('garden-modal')">Back</button>
+            <button class="clear-btn" onclick="clearGarden()">🗑️ Clear Garden</button>
+        </div>
+        
+        <div id="garden-area"></div>
+
+        <div class="sticker-tray">
+            <button class="tray-item" onclick="selectSticker('🌸')">🌸</button>
+            <button class="tray-item" onclick="selectSticker('🦋')">🦋</button>
+            <button class="tray-item" onclick="selectSticker('🐝')">🐝</button>
+            <button class="tray-item" onclick="selectSticker('🍄')">🍄</button>
+            <button class="tray-item" onclick="selectSticker('🌈')">🌈</button>
+            <button class="tray-item" onclick="selectSticker('🦖')">🦖</button>
+        </div>
+    </div>
+</div>
+
+<div class="sticker-tray">
+    <button class="tray-item" onclick="selectSticker('🌸', this)">🌸</button>
+    <button class="tray-item" onclick="selectSticker('🦋', this)">🦋</button>
+    </div>
+
 </body>
 </html>

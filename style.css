@@ -207,3 +207,31 @@ body {
     margin-top: 5px;
     color: #333;
 }
+/* The container where bubbles live */
+#bubble-area {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Takes up most of the modal */
+    overflow: hidden;
+    background: linear-gradient(to top, #89f7fe 0%, #66a6ff 100%);
+    border-radius: 20px;
+}
+
+/* The actual bubble */
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Start just off-screen */
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    animation: float-up var(--speed) linear forwards;
+}
+
+/* The magic floaty animation */
+@keyframes float-up {
+    to {
+        transform: translateY(-120vh); /* Move it off the top of the screen */
+    }
+}

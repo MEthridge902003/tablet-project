@@ -81,3 +81,43 @@ function playSound(name) {
         // alert("Check file: " + name); 
     }
 }
+// Bubbles
+function createBubble() {
+    const area = document.getElementById('bubble-area');
+    if (!area) return;
+
+    const bubble = document.createElement('div');
+    const size = Math.floor(Math.random() * 60) + 40 + "px"; // 40px to 100px
+    const speed = Math.floor(Math.random() * 4) + 6 + "s"; // 3s to 7s float time
+
+    bubble.classList.add('bubble');
+    bubble.style.width = size;
+    bubble.style.height = size;
+    bubble.style.left = Math.random() * 90 + "%"; // Random horizontal spot
+    bubble.style.setProperty('--speed', speed);
+
+    // When Keeva or Kiara taps it
+    bubble.onclick = function() {
+        playSound('pop'); // Use a short "pop" or "magic" sound from your assets
+        bubble.remove();
+    };
+
+    area.appendChild(bubble);
+
+    // Remove bubble after animation ends so the page doesn't get heavy
+    setTimeout(() => {
+        if (bubble.parentElement) bubble.remove();
+    }, 8000);
+}
+
+// Start spawning when the modal opens
+let bubbleInterval;
+function startBubbles() {
+    bubbleInterval = setInterval(createBubble, 1000); // New bubble every second
+}
+
+function stopBubbles() {
+    clearInterval(bubbleInterval); // This kills the "timer"
+    const area = document.getElementById('bubble-area');
+    if (area) area.innerHTML = ''; // This clears the old bubbles
+}

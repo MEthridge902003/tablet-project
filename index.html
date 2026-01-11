@@ -43,6 +43,12 @@
         <span class="icon">🔊</span>
         <span class="label">Noise Maker</span>
     </button>
+
+    <button class="app-card bubble-btn" onclick="openGame('bubble-modal'); startBubbles();">
+    <span class="icon">🫧</span>
+    <span class="label">Pop Pop!</span>
+</button>
+
 </main>
 
 
@@ -105,5 +111,13 @@
 <audio id="sfx-goat" src="assets/screaming-goat.mp3"></audio>
 <audio id="sfx-suspense" src="assets/suspense.mp3"></audio>
 
+<div id="bubble-modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeGame('bubble-modal'); stopBubbles();">Back to Menu</button>
+        <div id="bubble-area"></div>
+    </div>
+</div>
+
+<audio id="sfx-pop" src="assets/bubble-pop.mp3"></audio>
 </body>
 </html>

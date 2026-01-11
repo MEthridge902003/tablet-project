@@ -114,15 +114,16 @@ header h1 {
 /* This ensures the modal content sits in the middle and is solid */
 .modal-content {
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 90%;
-    max-height: 90%;
-    overflow-y: auto; /* Just in case it's too big for a phone */
-    z-index: 101; /* Higher than the modal overlay */
+    /* This ensures it takes up most of the screen on a phone */
+    width: 90%; 
+    height: 85%; 
+    z-index: 101;
+    position: relative;
 }
 
 /* Ensure the close button is always on top and clickable */
@@ -220,6 +221,7 @@ body {
     /* Ensure it's 'under' the close button but visible */
     margin-top: 10px;
     touch-action: none; /* Prevents the phone from trying to 'scroll' the bubbles */
+    flex-grow: 1;
 }
 
 /* The actual bubble */

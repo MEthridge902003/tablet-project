@@ -243,27 +243,38 @@ body {
     }
 }
 
+/* The container for everything inside the modal */
 .garden-wrapper {
-    background: #9de2ff; /* Sky color */
-    position: relative;
-    overflow: hidden;
-}
-
-#garden-area {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background: linear-gradient(to bottom, #9de2ff 0%, #9de2ff 60%, #7cfc00 60%, #228b22 100%);
-    position: relative;
-    cursor: crosshair;
+    height: 90vh; /* Takes up 90% of the phone height */
+    padding: 10px;
+    box-sizing: border-box;
+    background: #9de2ff;
 }
 
+/* The actual field where you plant */
+#garden-area {
+    flex: 1; /* This is the fix! It forces the field to stretch */
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, #9de2ff 0%, #9de2ff 60%, #7cfc00 60%, #228b22 100%);
+    border-radius: 15px;
+    margin: 10px 0;
+    overflow: hidden;
+    touch-action: none; /* Prevents the phone from scrolling while planting */
+}
+
+/* Make sure the tray doesn't get squished */
 .sticker-tray {
     display: flex;
-    justify-content: space-around;
-    background: rgba(255, 255, 255, 0.8);
-    width: 100%;
+    flex-wrap: wrap; /* Allows stickers to wrap to 2 rows if the phone is narrow */
+    justify-content: center;
+    gap: 8px;
     padding: 10px;
-    border-top: 3px solid #4cc9f0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
 }
 
 .sticker-tray button {
@@ -322,3 +333,4 @@ body {
     /* Subtle shadow makes them look like they are sitting on the grass */
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3)); 
 }
+    margin: 2px;

@@ -1,0 +1,15 @@
+{
+  "name": "Kiddo Fun Station",
+  "short_name": "KiddoStation",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#3a0769",
+  "theme_color": "#3a0769",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3081/3081918.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
